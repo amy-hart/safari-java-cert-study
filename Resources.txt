@@ -32,6 +32,10 @@ Java Ranch / Code Ranch
  - JavaRanch.com
  - Or direct to the Certification FAQ https://coderanch.com/t/659883/Wiki/Ocjp-Faq
 
+Sample tests:
+  Enuthware (via javaranch)
+  Kaplan
+
 Books
  - Sierra and Bates: https://learning.oreilly.com/library/view/oca-java-se/9781260011388/
  - Not Java 11 yet (some others are)
