@@ -1,0 +1,28 @@
+Q1) Given:
+
+var x;
+x = 100;
+sop("x is " + x);
+
+What happens:
+A) x is 100
+B) Compilation fails
+C) Exception at runtime
+
+Q2) Given:
+
+public void doStuff(var x) { // line n1
+	x += 100;
+	sop("x is " + x);
+}
+
+doStuff(99); // line n2
+doStuff("Hello "); // line n3
+
+What happens:
+A) x is 199
+B) x is 199
+   x is Hello 100
+C) Compilation fails at line n1
+D) Compilation fails at line n2
+E) Compilation fails at line n3
