@@ -26,3 +26,47 @@ B) x is 199
 C) Compilation fails at line n1
 D) Compilation fails at line n2
 E) Compilation fails at line n3
+
+
+Q3) How does the memory allocation for var differ from int, or String variables?
+
+A) Determined at runtime, might be the same
+B) Definitely the same
+C) Fixed at 8 bytes (on 64 bit machine)
+
+Q4) Given
+
+StringBuilder sb1 = new StringBuilder("Hello");
+StringBuilder sb2 = new StringBuilder("Hello");
+sout(sb1.equals(sb2));
+
+A) true
+B) false
+C) Compilation fails
+D) Exception at runtime
+
+
+What is the result?
+
+Q5) Given:
+  class X {
+    static int MAX_VAL = 100;
+    int value = 99;
+    public void setVal(int x) {
+      if (x <= MAX_VAL) value = x;
+    }
+  }
+And:
+    X a = new X();
+    X b = new X();
+    a.setVal(120);
+    System.out.print(a.value + ", ");
+    b.MAX_VAL = 150;
+    a.setVal(140);
+    System.out.println(a.value);
+What is the result?
+    A) 99, 99
+    B) 120, 140
+    C) 99, 140
+    D) Compilation failure
+    E) Exception at runtime
