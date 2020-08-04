@@ -113,3 +113,177 @@ A) doOtherStuff
 B) Compilation fails
 C) Exception at runtime
 
+Q8) Given:
+     class Base {
+        void doBaseStuff() {
+            System.out.println("doBaseStuff");
+        }
+    }
+    class Sub extends Base {
+        void doBaseStuff() {
+            System.out.println("doSubStuff");
+        }
+
+        void doOtherStuff() {
+            System.out.println("doOtherStuff");
+        }
+    }
+In the Base and Sub classes, which are true in isolation?
+    A) doBaseStuff in Base can be marked public without causing errors
+    B) doBaseStuff in Base can be marked private without causing errors
+    C) doBaseStuff in Sub can be marked public without causing errors
+    D) doBaseStuff in Sub can be marked protected without causing errors
+    E) doBaseStuff in Sub can be marked private without causing errors
+
+Q9) Given
+public abstract class Base { // line n1
+  public abstract void doStuff(){} // line n2
+}
+and:
+public class Sub extends Base { // line n3
+}
+and:
+Base b = new Sub(); // line n4
+What is the result?
+A) Compilation fails at line n1
+B) Compilation fails at line n2
+C) Compilation fails at line n3
+D) Compilation fails at line n4
+E) Compilation succeeds.
+
+Q10) Given     
+    class Base {
+        void doBaseStuff() { System.out.println("doBaseStuff"); }
+    }
+and:
+    class Sub extends Base {
+        void doBaseStuff() { System.out.println("doSubStuff"); }
+        void doOtherStuff() { System.out.println("doOtherStuff"); }
+    }
+
+Base b = new Sub();
+b.doOtherStuff();
+    What is the result?
+    A) doSubStuff
+    B) doOtherStuff
+    C) doBaseStuff
+    D) Exception at runtime
+    E) Compilation failure
+
+Q11) Given     
+    class Base {
+        void doBaseStuff() { System.out.println("doBaseStuff"); }
+    }
+and:
+    class Sub extends Base {
+        void doBaseStuff() { System.out.println("doSubStuff"); }
+        void doOtherStuff() { System.out.println("doOtherStuff"); }
+    }
+
+Base b = new Sub();
+((Sub) b).doOtherStuff();
+
+What is the result?
+    A) doSubStuff
+    B) doOtherStuff
+    C) doBaseStuff
+    D) Exception at runtime
+    E) Compilation failure
+
+Q12) Given     
+    class Base {
+        void doBaseStuff() { System.out.println("doBaseStuff"); }
+    }
+and:
+    class Sub extends Base {
+        void doBaseStuff() { System.out.println("doSubStuff"); }
+        void doOtherStuff() { System.out.println("doOtherStuff"); }
+    }
+
+Base b = new Base();
+((Sub) b).doOtherStuff();
+
+What is the result?
+    A) doSubStuff
+    B) doOtherStuff
+    C) doBaseStuff
+    D) Exception at runtime
+    E) Compilation failure
+
+Q13) Given     
+    class Base {
+        void doBaseStuff() { System.out.println("doBaseStuff"); }
+    }
+and:
+    class Sub extends Base {
+        void doBaseStuff() { System.out.println("doSubStuff"); }
+        void doOtherStuff() { System.out.println("doOtherStuff"); }
+    }
+
+Base b = new Base();
+((StringBuilder) b).concat("Hello");
+
+What is the result?
+    A) doSubStuff
+    B) Hello
+    C) doBaseStuff
+    D) Exception at runtime
+    E) Compilation failure
+
+Q14) Given     
+    class Base {
+        void doBaseStuff() { System.out.println("doBaseStuff"); }
+    }
+and:
+    class Sub extends Base {
+        void doBaseStuff() { System.out.println("doSubStuff"); }
+        void doOtherStuff() { System.out.println("doOtherStuff"); }
+    }
+
+Base b = new Base();
+Runnable r = ((Runnable) b);
+
+What is the result?
+    A) Compiles and runs OK
+    B) Exception at runtime
+    C) Compilation failure
+
+Q15) Given:
+    class Base {
+        Base doBaseStuff() {
+            return null;
+        }
+    }
+and:
+class Sub extends Base {
+// line n1
+}
+Which can (individually) be added at line n1?
+A) Base doBaseStuff() { return null; }
+B) Sub doBaseStuff() { return null; }
+C) String doBaseStuff() { return null; }
+D) Runnable doBaseStuff() { return null; }
+ 
+Q16)    StringBuilder sb1 = new StringBuilder("Hello");
+        StringBuilder sb2 = sb1;
+        sb1 = null;
+   
+Which is true?
+    A) sb1 is unreferenced and eligible for GC
+    B) sb1 and sb2 are unreferenced and eligible for GC
+    C) No objects are eligible for GC
+ 
+Q17)  
+StringBuilder sb1 = new StringBuilder("Hello");
+StringBuilder sb2 = new StringBuilder("World");
+sb1 = null;
+sb2 = sb1;
+
+Which is true?
+    A) Object containing "Hello" is unreferenced and eligible for GC
+    B) Object containing "World" is unreferenced and eligible for GC
+    C) Object containing "Hello", and "World" are both unreferenced and eligible for GC
+    D) No objects are eligible for GC
+
+
+
