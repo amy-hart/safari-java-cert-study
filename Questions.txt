@@ -92,3 +92,24 @@ and:
     D) Z-Hello, Y-Hello2
     E) Compilation fails
 
+Q7) Given
+  class Base {
+    private int x;
+    public Base(int x) {
+      this.x = x;
+    }
+  }
+and:
+  class Sub extends Base {
+    void doOtherStuff() {
+      System.out.println("doOtherStuff");
+    }
+  }
+and:
+Sub s = new Sub();
+s.doOtherStuff();
+What is the result?
+A) doOtherStuff
+B) Compilation fails
+C) Exception at runtime
+
