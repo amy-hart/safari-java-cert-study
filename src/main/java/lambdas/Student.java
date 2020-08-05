@@ -1,6 +1,7 @@
 package lambdas;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Student {
   private String name;
@@ -36,5 +37,10 @@ public class Student {
         ", grade=" + grade +
         ", courses=" + courses +
         '}';
+  }
+
+  public static Criterion<Student> getSmartCriterion(int threshold) {
+//    threshold++;
+    return s -> s.getGrade() > threshold; // Java's closures must be final or effectively final
   }
 }

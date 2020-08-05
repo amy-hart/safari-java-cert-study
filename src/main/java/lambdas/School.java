@@ -2,9 +2,12 @@ package lambdas;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
+@FunctionalInterface
 interface Criterion<E> {
   boolean test(E s);
+//  void doStuff();
 }
 
 class SmartStudentCriterion implements Criterion<Student> {
@@ -29,7 +32,16 @@ class LongStrings implements Criterion<String> {
 }
 
 public class School {
-  public static <E> List<E> filter(List<E> ls, Criterion<E> crit) {
+  // "design pattern: Functor"
+  public static <E, F> List<F> map(List<E> in, Function<E, F> op) {
+    List<F> result = new ArrayList<>();
+    for (E e : in) {
+      result.add(op.apply(e));
+    }
+    return result;
+  }
+
+  public static <E> List<E> filter(Iterable<E> ls, Criterion<E> crit) {
     List<E> result = new ArrayList<>();
     for (E s : ls) {
       if (crit.test(s)) {
@@ -92,5 +104,7 @@ public class School {
     showAll(filter(roster, s -> s.getGrade() < 80));
 
     showAll(filter(List.of("Fred", "Jim", "Sheila"), new LongStrings()));
+
+    showAll(map(roster, s -> "Student " + s.getName() + " has a grade of " + s.getGrade()));
   }
 }
