@@ -285,5 +285,78 @@ Which is true?
     C) Object containing "Hello", and "World" are both unreferenced and eligible for GC
     D) No objects are eligible for GC
 
+Q17)
+Which are correct declarations?
+
+A) Comparator<String> cs = s1, s2 -> s2.compareTo(s1);
+B) Comparator<String> cs = (s1, s2) -> s2.compareTo(s1);
+C) Comparator<String> cs = (var s1, String s2) -> s2.compareTo(s1);
+D) Comparator<String> cs = (var s1, s2) -> s2.compareTo(s1);
+E) Comparator<String> cs = (String s1, String s2) -> s2.compareTo(s1);
+
+
+Q18) Given:
+   ???? (s, t) -> s.length() - t.length();
+
+Which are correct inserted in place of ????
+A) BiFunction<String, String, Integer> f =
+B) BiPredicate<String> f =
+C) Comparator<String> f =
+D) Supplier<String, Integer> f =
+E) BinaryOperator<String> f =
+
+Q19)Given this directory layout:
+project/
+ + modules/
+ + module.one/
+   + src/
+     + module-info.java
+     + mypkg/
+       + MyClass.java
+ + module.two/
+   + src/
+     + module-info.java
+     + otherpkg/
+       + OtherClass.java
+Which, executed in the project directory, would build two modules correctly
+A) javac -d modules -p modules --module-source-path "./*/src" -m module.one,module.two
+B) javac -d modules -p modules --module-source-path "./*/src" -m module.one
+C) javac --module-path modules --module-source-path "./*/src" --module module.one,module.two
+D) javac --module-path modules --module-source-path "./*/src" --modules module.one,module.two
+E) javac --module-path modules --module-source-path ./*/src --module one,two
+
+Q20)
+Given:
+module first {
+  exports my.stuff;
+}
+Which would allow module second to use class my.stuff.Banana
+
+A) module second { requires my.stuff; }
+B) module second { requires Banana; }
+C) module second { uses my.stuff.Banana; }
+D) module second { requires first; }
+E) module second { opens first; }
+
+
+Q21)
+    class Base {
+        void doBaseStuff() {
+            System.out.println("doBaseStuff");
+        }
+    }
+    class Sub extends Base {
+        void doBaseStuff() {
+            System.out.println("doSubStuff");
+        }
+    }
+
+In the Base and Sub classes, which are true in isolation?
+    A) doBaseStuff in Base can be marked throws Exception without causing errors
+    B) doBaseStuff in Base can be marked throws RuntimeException without causing errors
+    C) doBaseStuff in Sub can be marked throws Exception without causing errors
+    D) doBaseStuff in Sub can be marked throws RuntimeException without causing errors
+    E) if doBaseStuff in Base were marked throws Exception,
+       then doBaseStuff in Sub can be marked throws IOException without causing errors
 
 
